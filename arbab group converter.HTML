@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbap Group Converter App — Pronab Howlader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo-area">
+      <img src="Logo.png" alt="Arbap Group Logo" class="logo">
+      <div>
+        <h1>ARBAB GROUP CONVERTER APP</h1>
+        <p class="byline">Created by <strong>Pronab Howlader</strong></p>
+      </div>
+    </div>
+    <p class="unit-info">
+      Units: width (mm), length (m), GSM (g/m²), micron (µm), density (g/cm³)
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="card" id="gsm-card">
+      <h2>1️⃣ Convert GSM ↔ Micron</h2>
+      <label>Mode
+        <select id="gsmMode">
+          <option value="gsmFromMicron">Compute GSM from Micron & Density</option>
+          <option value="micronFromGsm">Compute Micron from GSM & Density</option>
+        </select>
+      </label>
+      <label>Micron (µm)<input type="number" id="micron" value="25" step="0.01"></label>
+      <label>GSM (g/m²)<input type="number" id="gsm" value="0" step="0.01"></label>
+      <label>Material density (g/cm³)
+        <select id="density">
+          <option value="1.40">PET / MPET — 1.40</option>
+          <option value="0.92">PE / mCPP / BOPP — 0.92</option>
+          <option value="1.15">BOPA — 1.15</option>
+          <option value="1.35">PVC — 1.35</option>
+        </select>
+      </label>
+      <div class="btn-row">
+        <button id="btnGsmCompute" class="btn">Compute</button>
+        <button id="btnGsmClear" class="btn clear">Clear</button>
+      </div>
+      <div id="gsmMicronResult" class="result">Result shows here</div>
+    </section>
+
+    <section class="card">
+      <h2>2️⃣ Weight from GSM, Width & Length</h2>
+      <label>GSM (g/m²)<input type="number" id="calc_gsm" value="35"></label>
+      <label>Width (mm)<input type="number" id="width_mm" value="1000"></label>
+      <label>Length (m)<input type="number" id="length_m" value="1"></label>
+      <div class="btn-row">
+        <button id="btnWeightCalc" class="btn">Calculate weight (kg)</button>
+        <button id="btnWeightClear" class="btn clear">Clear</button>
+      </div>
+      <div id="weightResult" class="result">Result shows here</div>
+    </section>
+
+    <section class="card">
+      <h2>3️⃣ Price conversions (meter ↔ kg)</h2>
+      <label>Price per meter<input type="number" id="price_per_meter" value="10"></label>
+      <label>Weight per meter (kg)<input type="number" id="weight_per_meter" value="0.035"></label>
+      <label>Price per kg<input type="number" id="price_per_kg" value="0"></label>
+      <div class="btn-row">
+        <button id="btnPriceToKg" class="btn">Price/kg from Price/m</button>
+        <button id="btnPriceToMeter" class="btn">Price/m from Price/kg</button>
+      </div>
+      <div id="priceResult" class="result">Result shows here</div>
+    </section>
+
+    <section class="card">
+      <h2>4️⃣ Weight per meter from reel</h2>
+      <label>Reel total weight (kg)<input type="number" id="reel_weight" value="10"></label>
+      <label>Reel length (m)<input type="number" id="reel_length" value="200"></label>
+      <div class="btn-row">
+        <button id="btnReelCompute" class="btn">Compute</button>
+        <button id="btnReelClear" class="btn clear">Clear</button>
+      </div>
+      <div id="reelResult" class="result">Result shows here</div>
+    </section>
+  </main>
+
+  <footer>© 2025 Arbap Group Converter App — Designed by Pronab Howlader</footer>
+  <script src="script.js"></script>
+</body>
+</html>
